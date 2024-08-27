@@ -36,6 +36,7 @@ export class AppointmentListComponent implements OnInit {
         localStorage.setItem('appointments', JSON.stringify(this.appointments));
     }
 
+    // Delete appointments
     deleteAppointment(index: number): void {
         this.appointments.splice(index, 1);
         localStorage.setItem('appointments', JSON.stringify(this.appointments));
