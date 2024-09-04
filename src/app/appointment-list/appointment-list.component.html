@@ -3,7 +3,7 @@
     <!-- This is for the inputs and the button on top -->
     <div class="card mt-3">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-4">
                 <input class="form-control" type="text" placeholder="Enter the title" [(ngModel)]="appointmentTitle">
             </div>
             <div class="col-md-4">
@@ -15,23 +15,6 @@
         </div>
     </div>
 
-    <h4 class="text-center mt-5 mb-3">Appointment List</h4>
-
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Date</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- For loop to show Appointments -->
-            <tr *ngFor="let appointment of appointments; index as i">
-                <td>{{ appointment.title }}</td>
-                <td>{{ appointment.date }}</td>
-                <td><button class="btn btn-danger" type="button" (click)="deleteAppointment(i)">Delete</button></td>
-            </tr>
-        </tbody>
-    </table>
+    <app-appointment-items [appointments]="appointments"
+        (deleteItem)="deleteAppointment($event)"></app-appointment-items>
 </div>

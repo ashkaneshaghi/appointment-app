@@ -1,0 +1,21 @@
+<div class="container">
+    <h4 class="text-center mt-5 mb-3">Appointment List</h4>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- For loop to show Appointments -->
+            <tr *ngFor="let appointment of appointments; index as i">
+                <td>{{ appointment.title }}</td>
+                <td>{{ appointment.date }}</td>
+                <td><button class="btn btn-danger" type="button" (click)="deleteAppointment(i)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
